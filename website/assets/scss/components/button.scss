@@ -1,0 +1,158 @@
+.button {
+  text-decoration: none;
+  border-radius: 3px;
+  background: $copy;
+  box-shadow: none;
+  padding: 9px 22px 11px;
+  margin: 0 5px 10px 0;
+  color: #FFF;
+  line-height: 1;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  width: auto;
+  font: inherit;
+  font-weight: 400;
+  font-size: 13px;
+  transition: 300ms background-color, 300ms color;
+  text-align: center;
+
+  &:hover {
+    background: $light-blue;
+  }
+
+  &--bg {
+    font-size: 15px;
+  }
+
+  &--proceed,
+  &--bg {
+    background: $light-blue;
+    margin: 0;
+
+    &:hover {
+      background: darken($light-blue, 10%);
+    }
+  }
+
+  &--white {
+    background: rgba(255, 255, 255, 0.8);
+    color: $copy;
+
+    &:hover {
+      background: $grey;
+      color: #FFF;
+    }
+  }
+
+  &--back {
+    background: transparent;
+    color: $copy;
+    border: 1px solid $line;
+    position: relative;
+    padding: 8px 21px 10px 28px;
+
+    &:hover {
+      background: $line;
+      color: $copy;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid #298FE0;
+      border-left: 1px solid #298FE0;
+      transform: rotate(45deg);
+      height: 5px;
+      width: 5px;
+      left: 18px;
+      top: 15px;
+    }
+  }
+
+  &--blue {
+    border: 1px solid $light-blue;
+    padding: 8px 24px 10px;
+    background: transparent;
+    margin: 0;
+  }
+
+  &--grey {
+    background: $grey;
+    margin: 0;
+    font-size: 15px;
+    width: 100%;
+    // max-width: 280px;
+    padding: 12px 22px 14px;
+  }
+
+  &--lgrey {
+    background: #DFDFDF;
+    color: #616161;
+
+    &:hover {
+      background: #CFCFCF;
+      color: #616161;
+    }
+  }
+
+  &--dark {
+    background: $grey;
+  }
+
+  &--small {
+    background: $grey;
+    font-size: 12px;
+    padding: 4px 15px;
+  }
+
+  &--full {
+    width: 100%;
+    margin: 0 0 10px;
+    font-size: 15px;
+    padding: 12px 15px 13px;
+
+    & + .button--full {
+      margin-top: 4px;
+    }
+  }
+
+  &--large {
+    font-size: 15px;
+    padding: 12px 22px 13px;
+  }
+
+  &--wide {
+    width: 100%;
+    margin-right: 0;
+    max-width: none;
+  }
+
+  &--image img {
+    display: inline-block;
+    margin: 0 5px -1px 0;
+  }
+
+  &--reset {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  &--translucent {
+    background: rgba($grey, 0.2);
+    color: $grey;
+
+    &:hover {
+      background-color: rgba($grey, 0.3);
+    }
+  }
+}
+
+[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+}

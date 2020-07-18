@@ -1,0 +1,241 @@
+body {
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+  color: $copy;
+  font: 300 16px/1.444 'Montserrat', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &.orange-link {
+    color: $orange;
+    border-bottom: 1px solid;
+    transition: 300ms border-bottom-color;
+    font-size: 14px;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &--large {
+      font-size: 16px;
+    }
+
+    &--arrow {
+      position: relative;
+
+      &:before {
+        content: '';
+        background: transparent url('~/assets/images/orange-arrow.svg') 7px center /auto 60% no-repeat;
+        position: absolute;
+        left: 100%;
+        width: 25px;
+        height: 100%;
+        bottom: 0;
+      }
+    }
+
+    &--arrow-up:before {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.42em;
+}
+
+div.small > p,
+div.small > ul,
+p.small,
+.small-content {
+  line-height: 1.719;
+  font-size: 0.875em;
+}
+
+.small-content p,
+.small-content ul {
+  font: inherit;
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: 1.375em;
+  font-weight: 600;
+  color: $dark;
+  margin: 0 0 25px;
+}
+
+h2 {
+  font-size: 1.125em;
+  font-weight: 600;
+  color: $dark;
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 500;
+  color: $dark;
+  margin: 0 0 11px;
+
+  small {
+    font-weight: 300;
+    color: $copy;
+    font-size: 11px;
+    margin-left: 5px;
+  }
+
+  a {
+    transition: 300ms color;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+}
+
+h4 {
+  color: $light-blue;
+  margin: 0 0 10px;
+  font: 400 italic 14px 'Libre Baskerville', serif;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.inherit {
+  color: inherit;
+}
+
+::selection {
+  background: $light-blue;
+  color: #FFF;
+}
+::-moz-selection {
+  background: $light-blue;
+  color: #FFF;
+}
+
+@include mq(49em) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    line-height: 1.444;
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.375em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+.columns ul {
+  columns: 2;
+  margin: 0;
+
+  li {
+    break-inside: avoid;
+    list-style-position: outside;
+    margin: 0 0 0.6em 20px;
+  }
+}
+
+pre {
+  max-width: 100%;
+  overflow: auto;
+  margin: 1.85em 0;
+  font-size: 0.9em;
+  padding: 1em;
+  line-height: 1.3;
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.read-more-content {
+  color: $orange;
+  transition: 300ms border-bottom-color;
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  font: inherit;
+  cursor: pointer;
+
+  border-bottom: 1px solid;
+  font-size: 16px;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: $orange;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 2px;
+    right: -15px;
+    top: 50%;
+  }
+
+  &::after {
+    width: 2px;
+    height: 11px;
+    right: -11px;
+    transition: opacity 150ms;
+  }
+
+  &.active::after {
+    opacity: 0;
+  }
+
+  + * {
+    margin-top: 1.42em;
+  }
+
+  &:not(.active) ~ * {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+}

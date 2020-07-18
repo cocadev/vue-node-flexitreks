@@ -1,0 +1,64 @@
+.content {
+  line-height: 1.46;
+
+  p,
+  li {
+    line-height: 1.46;
+  }
+
+  a {
+    text-decoration: underline;
+    transition: 300ms color;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+
+  &--orange a {
+    text-decoration: none;
+    color: $orange;
+
+    &:hover {
+      text-decoration: underline;
+      color: darken($orange, 10%);
+    }
+  }
+
+  ul {
+    padding: 15px 0;
+  }
+
+  li {
+    margin: 6px 0 0 19px;
+  }
+}
+
+.embed {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin: 0 0 30px;
+
+  &-container {
+    max-width: 500px;
+  }
+
+  iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+figcaption {
+  background: $copy;
+  color: #FFF;
+  font: 400 italic 11px 'Libre Baskerville', serif;
+  display: inline-block;
+  padding: 3px 10px 4px;
+  position: relative;
+  top: -14px;
+}

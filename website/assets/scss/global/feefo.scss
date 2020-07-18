@@ -1,0 +1,24 @@
+.stars {
+  font-size: 12px;
+  font-weight: 500;
+
+  figure {
+    display: inline-block;
+    vertical-align: middle;
+    width: 85px;
+    height: 15px;
+    background: url('~/assets/images/star-empty.svg') 0 0;
+    position: relative;
+    margin-right: 6px;
+    position: relative;
+    top: -2px;
+  }
+
+  span {
+    background: url('~/assets/images/star-full.svg') 0 0;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}

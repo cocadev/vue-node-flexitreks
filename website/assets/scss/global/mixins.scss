@@ -1,0 +1,104 @@
+@mixin clear {
+	&:after,
+	&:before {
+		content: ' ';
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin mq( $min, $max: false ) {
+	@if ( $min and $max == false ) {
+		@media screen and ( min-width: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max == 'true' ) {
+		@media screen and ( max-width: $min ) {
+			@content;
+		}
+	}
+	@else if ( $min and $max ) {
+		@media screen and ( min-width: $min ) and ( max-width: $max ) {
+			@content;
+		}
+	}
+}
+
+@mixin grid($gap: 30px, $breakOne: 480px, $breakTwo: false, $breakThree: false) {
+	margin-bottom: $gap;
+
+	@if ($breakThree) {
+		@include mq($breakOne, $breakTwo - 1px) {
+			margin-left: $gap;
+			width: calc(50% - #{$gap / 2});
+			float: left;
+
+			&:nth-child(2n+1) {
+				margin-left: 0;
+				clear: left;
+			}
+		}
+		
+		@include mq($breakTwo, $breakThree - 1px) {
+			margin-left: $gap;
+			width: calc(33.333% - #{$gap / 3 * 2});
+			float: left;
+
+			&:nth-child(3n+1) {
+				margin-left: 0;
+				clear: left;
+			}
+		}
+
+		@include mq($breakThree) {
+			margin-left: $gap;
+			width: calc(25% - #{$gap / 4 * 3});
+			float: left;
+
+			&:nth-child(4n+1) {
+				margin-left: 0;
+				clear: left;
+			}
+		}
+	}
+	@else {
+		@if ($breakTwo) {
+			@include mq($breakOne, $breakTwo - 1px) {
+				margin-left: $gap;
+				width: calc(50% - #{$gap / 2});
+				float: left;
+
+				&:nth-child(2n+1) {
+					margin-left: 0;
+					clear: left;
+				}
+			}
+			
+			@include mq($breakTwo) {
+				margin-left: $gap;
+				width: calc(33.333% - #{$gap / 3 * 2});
+				float: left;
+
+				&:nth-child(3n+1) {
+					margin-left: 0;
+					clear: left;
+				}
+			}
+		}
+		@else {
+			@include mq($breakOne) {
+				margin-left: $gap;
+				width: calc(50% - #{$gap / 2});
+				float: left;
+
+				&:nth-child(2n+1) {
+					margin-left: 0;
+					clear: left;
+				}
+			}
+		}
+	}
+}

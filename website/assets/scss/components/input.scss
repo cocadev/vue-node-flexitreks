@@ -1,0 +1,257 @@
+label,
+legend {
+	display: block;
+	margin: 0 0 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+textarea,
+select,
+input {
+	box-shadow: none;
+	border: none;
+	margin: 0 0 1.5rem;
+	display: block;
+  color: $copy;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 300;
+	outline: none;
+}
+
+[type=date],
+[type=datetime],
+[type=datetime-local],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=range],
+[type=tel],
+[type=text],
+[type=time],
+[type=url],
+[type=week],
+textarea,
+select {
+	-webkit-appearance: none;
+	border-radius: 3px;
+	background: #FFF;
+	padding: 14px 12px 13px;
+	width: 100%;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.small-input,
+[type=search] {
+	background: #FFF;
+	border-radius: 3px;
+	padding: 13px 12px 10px;
+	width: 100%;
+	margin: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1em;
+}
+::-moz-placeholder {
+  font-size: 1em;
+}
+:-ms-input-placeholder {
+  font-size: 1em;
+}
+:-moz-placeholder {
+  font-size: 1em;
+}
+
+textarea {
+	-webkit-appearance: none;
+	min-height: 7.5rem;
+	box-shadow: none;
+	min-width: 100%;
+	max-width: 100%;
+	outline: none;
+}
+
+select {
+	cursor: pointer;
+	background-image: url( 'data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTS42NjggMS41MWw0Ljk3NCA0Ljk3NSA0Ljk0OC00Ljk1IiBzdHJva2U9IiNENURERTIiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+' );
+	background-repeat: no-repeat;
+	background-position: right 1.25rem center;
+	padding-right: 2.5rem;
+	appearance: none;
+
+	&[disabled] {
+		opacity: 0.5;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+::-webkit-search-decoration {
+	display:none;
+}
+
+.error input,
+.error textarea,
+.error select,
+.form-style .error input,
+.form-style .error textarea,
+.form-style .error select {
+	border-color: #e82828;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-shadow: none;
+	border-color: #999;
+	margin: 0 5px 0 0;
+	width: auto;
+	display: inline-block;
+	position: relative;
+	top: -2px;
+}
+
+input[type="checkbox"] {
+	border-radius: 0;
+}
+
+.checkboxes {
+  label {
+    font-weight: 400;
+    font-size: 0.722em;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+
+    input {
+      border-color: #B8C5CA;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 0;
+      top: 2px;
+    }
+
+    small {
+      display: block;
+      font-size: 0.842em;
+      line-height: 1.45em;
+      margin-top: 2px;
+    }
+	}
+}
+
+.form-style {
+	input,
+	select,
+	textarea {
+		border: 1px solid $line;
+		font-size: 16px;
+		margin: 0;
+
+		&:focus {
+			border-color: darken( $line, 25% );
+		}
+	}
+
+	select {
+		background-image: url('data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTS42NjggMS41MWw0Ljk3NCA0Ljk3NSA0Ljk0OC00Ljk1IiBzdHJva2U9IiMwMEE4RUMiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+');
+	}
+
+	fieldset {
+		padding: 0;
+		border: none;
+		margin-top: 40px;
+
+		&:after {
+			content: '';
+			display: table;
+		}
+	}
+
+	legend {
+		font-size: 1em;
+		font-weight: 600;
+		color: $dark;
+		display: block;
+		border-top: 1px solid $line;
+		width: 100%;
+		padding-top: 10px;
+		margin: 0 0 20px;
+	}
+
+	label {
+		font-weight: 600;
+	}
+
+	.group {
+		margin: 0 0 1.42em;
+	}
+
+	.datepicker-container {
+		margin-bottom: 2.75em;
+	}
+
+	@media (min-width: 600px) {
+		.space > label,
+		.group > label {
+			float: left;
+			width: 220px;
+			margin-left: -220px;
+			text-align: right;
+			padding-right: 30px;
+			padding-top: 14px;
+		}
+
+		.space,
+		.group {
+			padding-left: 220px;
+			max-width: 624px;
+		}
+	}
+}
+
+.booking {
+	@media (min-width: 600px) {
+		form {
+			max-width: 735px;
+			width: 100%;
+		}
+
+		legend {
+			margin-bottom: 43px;
+		}
+	}
+
+	@include mq(55em) {
+		.datepicker {
+			margin: 0 0 0 20px;
+			right: auto;
+			left: 180px;
+		}
+	}
+
+	@include mq(70em) {
+		.datepicker {
+			left: calc(100% + 20px);
+		}
+	}
+}

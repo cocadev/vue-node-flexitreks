@@ -1,0 +1,190 @@
+extends layout
+
+block content
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top')
+            p Dear #{customer.first_name},
+            p Thank you for your booking.
+            h4 Your booking details
+            p
+              strong Booking reference number:
+              | #{booking_reference}
+              br
+              strong Payment total (GBP): 
+              | £#{total_cost}
+              br
+              strong Payment date: 
+              | #{prettyDate(createdAt)}
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top')
+            h4 Holiday details
+            h3 #{tour.name}
+            table(width='100%', style='table-layout: fixed;')
+              tr
+                td Arrive #{arrival_label} 
+                td Depart #{departure_label}
+            hr
+            table(width='100%', style='table-layout: fixed;')
+              tr
+                td
+                  strong Name
+                  br
+                  span #{customer.title} #{customer.first_name} #{customer.last_name}
+                  br
+                  br
+                td
+                  strong Email address
+                  br
+                  span #{customer.email_address}
+                  br
+                  br
+              tr
+                td
+                  strong Daytime telephone
+                  br
+                  span #{customer.telephone_number}
+                  br
+                  br
+                td
+                  strong Alternative Telephone
+                  br
+                  span #{customer.alternative_telephone_number}
+                  br
+                  br
+              tr
+                td
+                  strong Address details
+                  br
+                  | #{customer.address_line_1}
+                  if customer.address_line_2
+                    br
+                    | #{customer.address_line_2}
+                  br
+                  | #{customer.town}
+                  br
+                  | #{customer.county}
+                  br
+                  | #{customer.postcode}
+                  br
+                  | #{customer.country}
+                td
+            hr
+            table(width='100%', style='table-layout: fixed;')
+              each room in rooms
+                tr
+                  th Room number 
+                  td #{room.id} 
+                tr
+                  th Type 
+                  td #{room.name} - #{room.category} 
+                if room.extras
+                  tr
+                    td(colspan=2)
+                      br
+                  tr
+                    th Extras 
+                    td
+                      each extra in room.extras
+                        | #{extra.name} x#{extra.quantity} 
+                        br
+                        | #{extra.room_name} - #{extra.category} 
+                tr
+                  td(colspan='1')  
+            hr
+            table(width='100%', style='table-layout: fixed;')
+              each group in groupOfTwo(party)
+                tr
+                  each person, index in group
+                    td
+                      strong Person #{index + 1}
+                      br
+                      br
+                      strong Name
+                      br
+                      | #{person.title} #{person.first_name} #{person.last_name}
+                      br
+                      br
+                      strong Date of birth
+                      br
+                      | #{prettyDate(person.date_of_birth)}
+                      br
+                      br
+                      strong Height
+                      br
+                      | #{person.height}cm
+                      br
+                      br
+                      if person.tour_bike
+                        strong Bike
+                        br
+                        | #{person.tour_bike.short_name}
+                        br
+                        br
+                      strong Dietary requirements
+                      br
+                      | #{person.dietary_requirements}
+                      br
+                      br
+                      if person.extras
+                        strong Extras
+                        each extra in person.extras
+                          br
+                          | #{extra.name}
+                        br
+                        br
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top', style='text-align: center;')
+            h3(style='text-align: center;') Something not quite right with your booking? Get in touch.
+            p
+              | Call us 
+              a(href='tel:+441273410550') +44 (0)1273 410550
+            p
+              +buttonPrimary(site + '/contact', 'Contact')
+
+block header
+  script(type='application/ld+json').
+    {
+      "@context": "http://schema.org",
+      "@type": "LodgingReservation",
+      "reservationNumber": "#{booking_reference}",
+      "reservationStatus": "http://schema.org/Pending",
+      "underName": {
+        "@type": "Person",
+        "name": "#{customer.title} #{customer.first_name} #{customer.last_name}"
+      },
+      "reservationFor": {
+        "@type": "Event",
+        "name": "#{tour.name}",
+        "startDate": "#{arrival}",
+        "location": {
+          "@type": "Place",
+          "name": "#{tour.destinations[0].name}"
+        },
+        "address": {
+          "addressCountry": "#{tour.destinations[0].name}",
+          "addressLocality": "",
+          "addressRegion": "",
+          "postalCode": "",
+          "streetAddress": ""
+        }
+      },
+      "bookingAgent": {
+        "@type": "Organization",
+        "name": "Flexitreks",
+        "url": "https://flexitreks.com"
+      },
+      "bookingTime": "#{createdAt}",
+      "checkinDate": "#{arrival}",
+      "checkoutDate": "#{departure}",
+      "price": "#{total_cost}",
+      "priceCurrency": "GBP"
+    }

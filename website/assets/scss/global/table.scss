@@ -1,0 +1,43 @@
+table {
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 10px;
+
+  .n  {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  tbody {
+    td,
+    th {
+      padding: 2px 0;
+    }
+
+    & + tbody > tr:first-child > * {
+      padding-top: 10px;
+    }
+  }
+
+  thead {
+    td,
+    th {
+      padding: 6px 0 11px;
+    }
+  }
+}
+
+
+.total-row {
+  border-bottom: 1px solid $line;
+  border-top: 1px solid $line;
+  padding: 10px 0;
+  margin: 20px 0;
+
+  & + .total-row {
+    margin-top: -20px;
+    border-top: none;
+  }
+}

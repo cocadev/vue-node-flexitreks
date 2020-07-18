@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top')
+            p Dear #{customer.first_name},
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sagittis tellus, ut bibendum metus. Morbi at lacus placerat, auctor augue non, posuere lacus. Donec auctor leo mollis, ornare est a, feugiat mauris. Morbi maximus cursus.
+            img(src=tour.image.url + '?w=540', alt=tour.name)
+            +buttonPrimary(site + '/tours/' + tour.slug, 'Explore your route')
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top')
+            h4 Travel checklist
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sagittis tellus, ut bibendum metus. Morbi at lacus placerat, auctor augue non, posuere lacus. Donec auctor leo mollis, ornare est a, feugiat mauris. Morbi maximus cursus.
+  +subscribe()

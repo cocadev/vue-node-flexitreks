@@ -1,0 +1,31 @@
+dl {
+    background: #FFF;
+    margin: 0 0 30px;
+
+    dd {
+        margin: 0 0 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    dt {
+        font-weight: 700;
+        min-width: 120px;
+    }
+
+    hr {
+        grid-column: span 3;
+        margin: 0 0 10px;
+    }
+
+    @media screen and (min-width: 600px) {
+        display: grid;
+        grid-template-columns: min-content auto;   
+
+        dd {
+            margin: 0 10px 10px;
+        }
+    }
+}

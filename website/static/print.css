@@ -1,0 +1,113 @@
+[role="contentinfo"],
+.filters,
+.feefo-rating,
+.navicon {
+    display: none;
+}
+
+
+
+
+.list-of-tours {
+    padding-top: 30px;
+}
+
+body .tour-preview .tour-preview__left {
+    width: calc(100% - 297px);
+    float: left;
+}
+
+body .tour-preview aside {
+    float: right;
+    margin-top: 0;
+    padding: 25px 30px 80px;
+    width: 297px;
+}
+
+body .tour-preview figure {
+    position: absolute;
+    width: 35%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 297px;
+    min-height: auto;
+    width: 40%;
+}
+
+body .tour-preview .tour-preview__top {
+    position: relative;
+    padding-left: 297px;
+}
+
+body .tour-preview .button {
+    position: absolute;
+    width: 236px;
+    right: 30px;
+    bottom: 40px;
+}
+
+body .tour-preview header {
+    padding: 24px 30px;
+    min-height: 235px;
+}
+
+body .tour-preview header .small {
+    max-width: 600px;
+}
+
+
+body .tour .no-mobile,
+body .tour .no-desktop {
+    display: none;
+}
+
+body .tour .primary {
+    width: 65%;
+    max-width: 736px;
+    float: left;
+}
+
+body .tour .secondary {
+    float: right;
+    max-width: 407px;
+    width: calc(35% - 30px);
+}
+
+body .tour .related {
+    margin-bottom: 90px;
+}
+
+
+
+body .booking-page {
+    padding: 60px 20px;
+}
+
+body .booking-page .booking-header ul {
+    padding: 25px 60px;
+}
+
+body .booking-page .booking-header ul li + li {
+    margin-top: 10px;
+}
+
+body .booking-page .primary {
+    width: 65%;
+    max-width: 736px;
+    float: left;
+}
+
+body .booking-page .secondary {
+    position: sticky;
+    top: 100px;
+    float: right;
+    max-width: 407px;
+    width: calc(35% - 30px);
+    padding: 36px 37px;
+}
+
+body .booking-page .booking-header ul {
+    padding-left: 110px;
+}

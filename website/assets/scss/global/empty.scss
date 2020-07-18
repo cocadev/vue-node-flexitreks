@@ -1,0 +1,69 @@
+.list-of-tours,
+.not-bookable {
+  min-height: calc(100vh - 630px);
+  padding-bottom: 60px;
+}
+
+.not-bookable,
+.list-of-tours:empty {
+  background: url('~/assets/images/bike.svg') center no-repeat;
+  position: relative;
+}
+
+.not-bookable:before,
+.list-of-tours:empty:before {
+  display: block;
+  height: 200px;
+  content: '';
+}
+
+.not-bookable:after {
+  content: 'This tour isn\'t available to book at the present time.';
+  padding: 0 20px;
+}
+
+.list-of-tours:empty:after {
+  content: 'We weren\'t able to find any tours matching those filters';
+}
+
+.not-bookable:after,
+.list-of-tours:empty:after {
+  text-align: center;
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: 700;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.not-bookable .orange-link {
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+  top: 50%;
+  margin-top: 90px;
+}
+
+@media (min-height: 500px) {
+  .not-bookable,
+  .list-of-tours:empty {
+    background-position: center 40px;
+  }
+
+  .not-bookable:before,
+  .list-of-tours:empty:before {
+    height: 350px;
+  }
+
+  .not-bookable:after,
+  .list-of-tours:empty:after {
+    top: 230px;
+    transform: none;
+  }
+
+  .not-bookable .orange-link {
+    margin-top: 70px;
+  }
+}

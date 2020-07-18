@@ -1,0 +1,125 @@
+body {
+  padding-top: 55px;
+
+  @include mq(40em) {
+    padding-top: 139px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.layout {
+  &--default {
+    background: #FFF;
+  }
+
+  &--blue {
+    background: $lightest;
+    min-height: 200px;
+
+    @include mq(40em) {
+      min-height: calc(100vh - 530px);
+    }
+  }
+
+  &--empty {
+    background: #FFF;
+  }
+}
+
+.__nuxt-error-page {
+  position: relative;
+  z-index: 1;
+}
+
+.clear {
+  @include clear;
+}
+
+.wrap {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include clear;
+
+  &--thin {
+    max-width: 500px;
+  }
+
+  &--mid {
+    max-width: 773px;
+  }
+
+  &--medium {
+    max-width: 1066px;
+  }
+}
+
+.four-col {
+  @include clear;
+
+  & > * {
+    @include grid(30px, 520px, 750px, 1000px);
+  }
+}
+
+.three-col {
+  @include clear;
+
+  & > * {
+    @include grid(30px, 520px, 1000px);
+  }
+}
+
+.two-col {
+  @include clear;
+
+  & > * {
+    @include grid(30px, 520px);
+  }
+}
+
+.eq-col {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  &::before,
+  &::after {
+		width: 100%; // Without this, pseudo element bumps grids outta kilt in Safari
+  }
+}
+
+.embed {
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.pad-top {
+  padding-top: 30px;
+
+  @include mq(40em) {
+    padding-top: 60px;
+  }
+}
+
+.pad-bottom {
+  padding-bottom: 30px;
+
+  @include mq(40em) {
+    padding-bottom: 60px;
+  }
+}

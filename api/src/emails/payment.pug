@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top')
+            p Dear #{customer.first_name},
+            p Thank you for your payment. It's all gone through successfully. You'll be sent a separate confirmation email by SagePay.
+            h4 Your booking details
+            p
+              strong Booking reference number:
+              | #{booking_reference}
+              br
+              strong Payment date: 
+              | #{prettyDate(new Date())}
+  tr
+    td(valign='top', style='border-bottom: 1px solid #D5DDE2;')
+      table.templateInner(border='0', aling='', cellpadding='0', align='center', cellspacing='0')
+        tr
+          td.bodyContent(valign='top', style='text-align: center;')
+            h3(style='text-align: center;') Something not quite right with your booking? Get in touch.
+            p
+              | Call us 
+              a(href='tel:+441273410550') +44 (0)1273 410550
+            p
+              +buttonPrimary(site + '/contact', 'Contact')

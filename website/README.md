@@ -1,4 +1,4 @@
-# Flexitreks website
+# Flexitreks website for nuxt.js
 
 > Frontend for Flexitreks
 

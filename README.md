@@ -1,4 +1,4 @@
-# vue-node-flexitreks 2
+# vue-node-flex 2
 
 -vue website <br/>
 -vue admin dashboard <br/>

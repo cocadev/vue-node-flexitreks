@@ -8,7 +8,6 @@
 psql -U postgres -h localhost -d flexitreks_dev -f "D:/flexiPgDump.sql"
 
 <kbd>
-	<img src="1.png">
 </kbd>
 
 <a href="https://flexitreks.netlify.app/">Click Live Demo</a>

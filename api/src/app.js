@@ -11,7 +11,7 @@ import passportJWT from 'passport-jwt';
 import routes from './routes/';
 import AuthController from './controllers/Auth';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 const app = express();
 const ExtractJwt = passportJWT.ExtractJwt;
 const JwtStrategy = passportJWT.Strategy;
